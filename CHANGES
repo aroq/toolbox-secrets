@@ -1,3 +1,10 @@
+Version 0.1.2:
+ - Refactor utils & cmd
+ - Fix Dockerfile COPY
+ - Fix Dockerfile COPY
+ - Fix docker FROM
+ - Add gh action
+
 Version 0.1.1:
  - Update tools & config
 
