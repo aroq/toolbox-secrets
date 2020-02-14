@@ -4,4 +4,4 @@ RUN mkdir -p /toolbox-secrets
 ADD tools /toolbox-secrets/tools
 ADD variant-lib /toolbox-secrets/variant-lib
 
-ENTRYPOINT ["/toolbox-secrets/tools/gpg"]
+ENTRYPOINT ["/toolbox-secrets/tools/secrets"]
