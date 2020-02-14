@@ -1,0 +1,5 @@
+name: 'Toolbox Secrets'
+description: 'Action to execute secrets workflows'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

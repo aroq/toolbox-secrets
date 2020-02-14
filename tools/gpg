@@ -10,9 +10,9 @@ parameters:
 
 tasks:
   core:
-    import: toolbox/.toolbox/deps/toolbox/variant-lib/utils.yaml
+    import: /toolbox/variant-lib/utils.yaml
   secrets:
-    import: toolbox/.toolbox/deps/toolbox-secrets/variant-lib/utils.yaml
+    import: /toolbox-secrets/variant-lib/utils.yaml
 
 steps:
   - task: secrets.gpg.symmetric.decrypt
