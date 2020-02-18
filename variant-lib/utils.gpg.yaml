@@ -32,19 +32,20 @@ tasks:
                   gpg --symmetric --cipher-algo AES256 {{ .input }}
 
           decrypt:
-            parameters:
-            - name: input
-              type: string
-            - name: output
-              type: string
-            steps:
-            - task: core.exec
-              arguments:
-                title: "GPG :: Symmetric :: Decrypt file"
-                cmd: |
-                  gpg --quiet --batch --yes --decrypt --passphrase="{{ .TOOLBOX_GPG_SECRET_PASSPHRASE }}" \
-                    --output {{ .output }} {{ .input }};
             tasks:
+              file:
+                parameters:
+                - name: input
+                  type: string
+                - name: output
+                  type: string
+                steps:
+                - task: core.exec
+                  arguments:
+                    title: "GPG :: Symmetric :: Decrypt file"
+                    cmd: |
+                      gpg --quiet --batch --yes --decrypt --passphrase="{{ .TOOLBOX_GPG_SECRET_PASSPHRASE }}" \
+                        --output {{ .output }} {{ .input }};
               dir:
                 parameters:
                 - name: directory
