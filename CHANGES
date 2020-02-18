@@ -1,3 +1,6 @@
+Version 0.1.6:
+ - Update gpg commands: add file & dir
+
 Version 0.1.5:
  - Fix gpg symmetric decrypt dir command
 
