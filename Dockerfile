@@ -1,7 +1,9 @@
-FROM aroq/toolbox:0.2.1
+FROM aroq/toolbox-variant:0.1.14
 
-RUN mkdir -p /toolbox-secrets
-ADD tools /toolbox-secrets/tools
-ADD variant-lib /toolbox-secrets/variant-lib
+# Add git-secret package from edge testing
+RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing git-secret && \
+    apk --no-cache add gnupg
 
-ENTRYPOINT ["/toolbox-secrets/tools/secrets"]
+RUN mkdir -p /toolbox/toolbox-secrets
+ADD tools /toolbox/toolbox-secrets/tools
+ADD variant-lib /toolbox/toolbox-secrets/variant-lib
