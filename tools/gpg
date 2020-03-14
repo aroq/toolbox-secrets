@@ -1,0 +1,37 @@
+#!/usr/bin/env variant
+# vi: ft=yaml
+
+bindParamsFromEnv: true
+
+parameters:
+  - name: TOOLBOX_GPG_SECRET_PASSPHRASE
+
+tasks:
+  core:
+    import: /toolbox/toolbox-variant/variant-lib/utils.yaml
+  secrets:
+    import: /toolbox/toolbox-secrets/variant-lib/utils.gpg.yaml
+
+  symmetric:
+    bindParamsFromEnv: true
+    tasks:
+      decrypt:
+        bindParamsFromEnv: true
+        tasks:
+          file:
+            bindParamsFromEnv: true
+            parameters:
+            - name: TOOLBOX_GPG_INPUT_FILE
+            - name: TOOLBOX_GPG_OUTPUT_FILE
+            steps:
+            - task: secrets.gpg.symmetric.decrypt
+              arguments:
+                input: "{{ .TOOLBOX_GPG_INPUT_FILE }}"
+                output: "{{ .TOOLBOX_GPG_OUTPUT_FILE }}"
+          dir:
+            bindParamsFromEnv: true
+            parameters:
+            - name: TOOLBOX_GPG_SECRET_DIRECTORY
+              default: .secrets
+            steps:
+            - task: secrets.gpg.symmetric.decrypt.dir
