@@ -1,3 +1,7 @@
+Version 0.1.8:
+ - Change dockerfile & add gpg tool
+ - Update Dockerfile
+
 Version 0.1.7:
  - Set default value for TOOLBOX_GPG_SECRET_DIRECTORY param
  - Update params
