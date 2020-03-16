@@ -1,4 +1,4 @@
-FROM aroq/toolbox-variant:0.1.19
+FROM aroq/toolbox-variant:0.1.20
 
 # Add git-secret package from edge testing
 RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing git-secret && \
