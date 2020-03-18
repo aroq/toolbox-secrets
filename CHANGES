@@ -1,3 +1,6 @@
+Version 0.1.11:
+ - Rename TOOLBOX_GPG_SECRET_DIRECTORY to TOOLBOX_SECRETS_DIR
+
 Version 0.1.10:
  - Update image version
 
