@@ -48,14 +48,14 @@ tasks:
                         --output {{ .output }} {{ .input }};
               dir:
                 parameters:
-                - name: TOOLBOX_GPG_SECRET_DIRECTORY
+                - name: TOOLBOX_SECRETS_DIR
                   default: .secrets
                 steps:
                 - task: core.exec
                   arguments:
-                    title: "GPG :: Symmetric :: Decrypt all gpg files in the directory :: {{ .TOOLBOX_GPG_SECRET_DIRECTORY }}"
+                    title: "GPG :: Symmetric :: Decrypt all gpg files in the directory :: {{ .TOOLBOX_SECRETS_DIR }}"
                     cmd: |
-                      cd {{ .TOOLBOX_GPG_SECRET_DIRECTORY }}
+                      cd {{ .TOOLBOX_SECRETS_DIR }}
                       gpg --quiet --batch --yes --passphrase="{{ .TOOLBOX_GPG_SECRET_PASSPHRASE }}" \
                         --decrypt-files *.gpg
 

@@ -31,7 +31,7 @@ tasks:
           dir:
             bindParamsFromEnv: true
             parameters:
-            - name: TOOLBOX_GPG_SECRET_DIRECTORY
+            - name: TOOLBOX_SECRETS_DIR
               default: .secrets
             steps:
             - task: secrets.gpg.symmetric.decrypt.dir
