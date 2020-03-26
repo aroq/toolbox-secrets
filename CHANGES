@@ -1,3 +1,6 @@
+Version 0.1.14:
+ - Update parent image to aroq/toolbox-variant:0.1.31
+
 Version 0.1.13:
  - Update parent image to aroq/toolbox-variant:0.1.30
 
