@@ -44,7 +44,7 @@ tasks:
                   arguments:
                     title: "GPG :: Symmetric :: Decrypt file"
                     cmd: |
-                      echo ${TOOLBOX_GPG_SECRET_PASSPHRASE} | \
+                      echo "${TOOLBOX_GPG_SECRET_PASSPHRASE}" | tr -d '\n' | \
                       gpg --passphrase-fd 0 --quiet --batch --yes --decrypt \
                         --output {{ .output }} {{ .input }};
               dir:
@@ -57,8 +57,5 @@ tasks:
                     title: "GPG :: Symmetric :: Decrypt all gpg files in the directory :: {{ .TOOLBOX_SECRETS_DIR }}"
                     cmd: |
                       cd {{ .TOOLBOX_SECRETS_DIR }}
-                      echo ${TOOLBOX_GPG_SECRET_PASSPHRASE} | \
-                      gpg --passphrase-fd 0 --quiet --batch --yes" --decrypt-files *.gpg
-
-
-
+                      echo "${TOOLBOX_GPG_SECRET_PASSPHRASE}" | tr -d '\n' | \
+                      gpg --passphrase-fd 0 --quiet --batch --yes --decrypt-files *.gpg
