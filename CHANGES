@@ -1,3 +1,7 @@
+Version 0.1.16:
+ - Fix gpg commands
+ - Update parent image to aroq/toolbox-variant:0.1.32
+
 Version 0.1.15:
  - Update gpg commands
 
