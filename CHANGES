@@ -1,3 +1,6 @@
+Version 0.1.17:
+ - Add hooks
+
 Version 0.1.16:
  - Fix gpg commands
  - Update parent image to aroq/toolbox-variant:0.1.32
