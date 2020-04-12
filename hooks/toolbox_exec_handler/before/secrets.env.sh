@@ -16,5 +16,3 @@ if [ -f "toolbox/.secrets/env.${TOOLBOX_TOOL_NAME}" ]; then
     . "toolbox/.secrets/env.${TOOLBOX_TOOL_NAME}"
     set +a
 fi
-
-env | grep ACQUIACLI || true
