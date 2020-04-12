@@ -1,7 +1,7 @@
 tools:
   gpg:
     from: config.tools
-    image: aroq/toolbox-secrets:v0.1.14
+    image: aroq/toolbox-secrets:v0.1.17
     cmd: gpg
     tool_dirs:
       - /toolbox/toolbox-secrets
