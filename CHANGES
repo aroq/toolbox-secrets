@@ -1,3 +1,6 @@
+Version 0.1.19:
+ - Update parent image
+
 Version 0.1.18:
  - Version bump to 0.1.17
  - Remove debug info
