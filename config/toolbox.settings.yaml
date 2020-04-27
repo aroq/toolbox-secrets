@@ -1,6 +1,6 @@
 tools:
   gpg:
     from: config.toolbox-variant
-    image: aroq/toolbox-secrets:0.1.25
+    image: aroq/toolbox-secrets:0.1.26
     tool_dirs:
       - /toolbox/toolbox-secrets
