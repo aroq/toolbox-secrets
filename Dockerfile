@@ -7,3 +7,5 @@ RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing git-
 RUN mkdir -p /toolbox/toolbox-secrets
 ADD tools /toolbox/toolbox-secrets/tools
 ADD variant-lib /toolbox/toolbox-secrets/variant-lib
+
+ENV TOOLBOX_TOOL_DIRS toolbox,/toolbox/toolbox-secrets
